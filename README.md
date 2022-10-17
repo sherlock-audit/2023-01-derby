@@ -9,7 +9,10 @@
 
 # Resources
 
-TBD
+- [Website](https://derby.finance/)
+- [Derby Finance Docs](https://derby-finance.gitbook.io/derby-finance-docs/)
+- [Twitter](https://twitter.com/derby_finance)
+- [Medium](https://medium.com/derbyfinance)
 
 # Audit scope
 
