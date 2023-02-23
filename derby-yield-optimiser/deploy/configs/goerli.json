@@ -1,0 +1,22 @@
+{
+  "DerbyGoerliUSDC": {
+    "deploy": {
+      "name": "DerbyUSDC",
+      "symbol": "dfUSDC",
+      "decimals": 6,
+      "vaultNumber": 1,
+      "vaultCurrency": "0x07865c6E87B9F70255377e024ace6630C1Eaa37F",
+      "uScale": 1e6
+    },
+    "init": {
+      "gasFeeLiq": 1e10,
+      "rebalanceInterval": 1,
+      "marginScale": 1e9,
+      "liquidityPercentage": 10,
+      "performanceFee": 10,
+      "chainIds": [
+        10
+      ]
+    }
+  }
+}
