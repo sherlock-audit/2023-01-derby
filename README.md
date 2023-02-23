@@ -34,6 +34,37 @@ Example:
 
 # Audit scope
 
+
+[derby-yield-optimiser @ a20f134fd711dc418ed1a947431ded800a3ebace](https://github.com/derbyfinance/derby-yield-optimiser/tree/a20f134fd711dc418ed1a947431ded800a3ebace)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IALendingPool.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IALendingPool.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IAToken.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IAToken.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IBeta.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IBeta.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/ICToken.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/ICToken.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IComptroller.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IComptroller.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IConnext.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IConnext.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IExecutor.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IExecutor.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IIdle.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IIdle.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IQuoter.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IQuoter.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IStableSwap3Pool.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IStableSwap3Pool.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/ISwapRouter.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/ISwapRouter.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/ITruefi.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/ITruefi.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Factory.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Factory.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Pool.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Pool.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IWETH.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IWETH.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IXReceiver.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IXReceiver.sol)
+- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IYearn.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IYearn.sol)
+- [derby-yield-optimiser/contracts/Mocks/CompoundProviderMock.sol](derby-yield-optimiser/contracts/Mocks/CompoundProviderMock.sol)
+- [derby-yield-optimiser/contracts/Mocks/Connext/ConnextMock.sol](derby-yield-optimiser/contracts/Mocks/Connext/ConnextMock.sol)
+- [derby-yield-optimiser/contracts/Mocks/FrontendVault.sol](derby-yield-optimiser/contracts/Mocks/FrontendVault.sol)
+- [derby-yield-optimiser/contracts/Mocks/GameMock.sol](derby-yield-optimiser/contracts/Mocks/GameMock.sol)
+- [derby-yield-optimiser/contracts/Mocks/MainVaultMock.sol](derby-yield-optimiser/contracts/Mocks/MainVaultMock.sol)
+- [derby-yield-optimiser/contracts/Mocks/XChainControllerMock.sol](derby-yield-optimiser/contracts/Mocks/XChainControllerMock.sol)
+- [derby-yield-optimiser/contracts/Mocks/vaults/YearnVaultMock.sol](derby-yield-optimiser/contracts/Mocks/vaults/YearnVaultMock.sol)
+- [derby-yield-optimiser/misc/provider-template/IProtocolName.sol](derby-yield-optimiser/misc/provider-template/IProtocolName.sol)
+- [derby-yield-optimiser/misc/provider-template/Provider.sol](derby-yield-optimiser/misc/provider-template/Provider.sol)
+
+
+
 TBD
 
 # About Derby
