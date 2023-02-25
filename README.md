@@ -20,58 +20,72 @@ The README is a **very important** document for the audit. Please fill it out th
 ERC20/ERC721/ERC777/FEE-ON-TRANSFER/REBASING TOKENS:  
 *Which tokens do you expect will interact with the smart contracts? Please note that these answers have a significant impact on the issues that will be submitted by Watsons. Please list specific tokens (ETH, USDC, DAI) where possible, otherwise "Any"/"None" type answers are acceptable as well.*
 
+External tokens: USDC, DAI and USDT
+Own token: DerbyToken
+LP tokens: VaultToken
+
 ADMIN:
 *Admin/owner of the protocol/contracts.
 Label as TRUSTED, If you **don't** want to receive issues about the admin of the contract being able to steal funds. 
 If you want to receive issues about the Admin of the contract being able to steal funds, label as RESTRICTED & list specific acceptable/unacceptable actions for the admins.*
 
+Guardian: the guardian is there to manually restart the protocol when it's stuck during rebalancing or cross chain rebalancing. The guardian is controlled by a single entity because it needs to be able to act quickly.
+
 EXTERNAL ADMIN:
 *These are admins of the protocols your contracts integrate with (if any). 
 If you **don't** want to receive issues about this Admin being able to steal funds or result in loss of funds, label as TRUSTED
 If you want to receive issues about this admin being able to steal or result in loss of funds, label as RESTRICTED.*
+
+DAO: the DAO is there to perform admin functions. The DAO is controlled by a multisig in the beginning and in the foreseeable future. 
  
 ```
-DEPLOYMENT: [e.g. mainnet, Arbitrum, Optimism, ..]
-ERC20: [e.g. any, none, USDC, USDC and USDT]
-ERC721: [e.g. any, none, UNI-V3]
-ERC777: [e.g. any, none, {token name}]
-FEE-ON-TRANSFER: [e.g. any, none, {token name}]
-REBASING TOKENS: [e.g. any, none, {token name}]
-ADMIN: [trusted, restricted, n/a]
-EXTERNAL-ADMINS: [trusted, restricted, n/a]
+DEPLOYMENT: Mainnet, Arbitrum, Optimism, Polygon, Binance Smart Chain
+ERC20: USDC, DAI, USDT, own DerbyToken and own VaultToken
+ERC721: own Game token
+ERC777: N.A.
+FEE-ON-TRANSFER: none
+REBASING TOKENS: VaultToken
+ADMIN: trusted
+EXTERNAL-ADMINS: trusted
 ```
 
 
 Please answer the following questions to provide more context: 
 ### Q: Are there any additional protocol roles? If yes, please explain in detail:
 1) The roles
+Game players. These are DerbyToken tokenholders that together determine the distribution of the vault funds over all the different underlying DeFi protocols (e.g. Compound, Aave, Yearn etc). 
 2) The actions those roles can take 
+A DerbyToken tokenholder can, via interacting with the Game contract, determine a part of the distribution of the vault funds that is proportional to the amount of tokens it has. During rebalancing a snapshot is taken of the joint distribution determined by aggregating all subdistributions given by the tokenholders.
 3) Outcomes that are expected from those roles 
+Rebalancing over the whitelisted underlying DeFi protocols.
 4) Specific actions/outcomes NOT intended to be possible for those roles
+Should NOT be able to steal userfunds. 
 
 A: 
 
 ___
 ### Q: Is the code/contract expected to comply with any EIPs? Are there specific assumptions around adhering to those EIPs that Watsons should be aware of?
-A:
+A: No
 
 ___
 
 ### Q: Please list any known issues/acceptable risks that should not result in a valid finding.
-A: 
+A: Protocol can halt during rebalancing (distributing funds over underlying DeFi protocols on the same chain) or crosschain rebalancing (distributing funds over chains/ layers) and guardian can restart the process. 
 
 ____
 ### Q: Please provide links to previous audits (if any).
-A:
+A: N.A.
 
 ___
 
 ### Q: Are there any off-chain mechanisms or off-chain procedures for the protocol (keeper bots, input validation expectations, etc)? 
-A: 
+A: Yes
+
+They are all listed by the seccond diagram on this page: https://derby-finance.gitbook.io/derby-finance-docs/developers/architecture/cross-chain
 _____
 
 ### Q: In case of external protocol integrations, are the risks of an external protocol pausing or executing an emergency withdrawal acceptable? If not, Watsons will submit issues related to these situations that can harm your protocol's functionality. 
-A: [ACCEPTABLE/NOT ACCEPTABLE] 
+A: Partly ACCEPTABLE. So withdrawal from an underlying DeFi protocol back to the vault should be possible.
 
 
 # Audit scope
@@ -81,11 +95,6 @@ A: [ACCEPTABLE/NOT ACCEPTABLE]
 - [derby-yield-optimiser/contracts/Controller.sol](derby-yield-optimiser/contracts/Controller.sol)
 - [derby-yield-optimiser/contracts/DerbyToken.sol](derby-yield-optimiser/contracts/DerbyToken.sol)
 - [derby-yield-optimiser/contracts/Game.sol](derby-yield-optimiser/contracts/Game.sol)
-- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Factory.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Factory.sol)
-- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Pool.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IUniswapV3Pool.sol)
-- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IWETH.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IWETH.sol)
-- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IXReceiver.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IXReceiver.sol)
-- [derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IYearn.sol](derby-yield-optimiser/contracts/Interfaces/ExternalInterfaces/IYearn.sol)
 - [derby-yield-optimiser/contracts/Interfaces/IController.sol](derby-yield-optimiser/contracts/Interfaces/IController.sol)
 - [derby-yield-optimiser/contracts/Interfaces/IGame.sol](derby-yield-optimiser/contracts/Interfaces/IGame.sol)
 - [derby-yield-optimiser/contracts/Interfaces/IGoverned.sol](derby-yield-optimiser/contracts/Interfaces/IGoverned.sol)
@@ -111,4 +120,5 @@ A: [ACCEPTABLE/NOT ACCEPTABLE]
 
 # About Derby
 
-TBD
+Derby Finance is a community powered yield optimizer that diversifies its exposure over a wide variety of DeFi yield opportunities on different EVM chains and layer 2s. It does this by offering vaults which own underlying Liquidity Pool (LP) Tokens from other DeFi protocols. 
+
